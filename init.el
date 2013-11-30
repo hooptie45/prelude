@@ -37,7 +37,6 @@
        (if (equal system-type 'windows-nt) "USERNAME" "USER")))
 
 (message "Prelude is powering up... Be patient, Master %s!" current-user)
-(undo-tree-mode -1)
 
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'hyper)
@@ -117,6 +116,7 @@ by Prelude.")
 
 (prelude-eval-after-init
  ;; greet the use with some useful tip
+ (undo-tree-mode -1)
  (run-at-time 5 nil 'prelude-tip-of-the-day))
 
 ;;; init.el ends here
