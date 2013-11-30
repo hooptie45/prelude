@@ -37,6 +37,12 @@
        (if (equal system-type 'windows-nt) "USERNAME" "USER")))
 
 (message "Prelude is powering up... Be patient, Master %s!" current-user)
+(undo-tree-mode -1)
+
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'hyper)
+(setq mac-function-modifier 'super)
+(global-set-key (kbd "M-z") 'dired-jump)
 
 (when (version< emacs-version "24.1")
   (error "Prelude requires at least GNU Emacs 24.1"))
